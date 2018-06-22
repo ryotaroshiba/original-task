@@ -35,6 +35,7 @@
             <br>
             <br>
             <h1>following一覧</h1>
+        @include('users.followingsuserlist', ['users' => $users])
             
         </div>
     </div>
