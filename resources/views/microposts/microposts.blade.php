@@ -8,9 +8,9 @@
 
         @include('user_favorites.favorites_button', ['user' => $micropost])
         
-        <div class="media-body">
+   <!--     <div class="media-body">
             <div>
-                {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">posted at {{ $user->created_at }}</span>
+                {!! link_to_route('users.show', $user->name, ['id' => $user->id]) !!} <span class="text-muted">send at {{ $user->created_at }}</span>
             </div>
             <div>
                 <p>{!! nl2br(e($micropost->content)) !!}</p>
@@ -22,7 +22,7 @@
                     {!! Form::close() !!}
                 @endif
             </div>
-        </div>
+        </div>    -->
     </li>
 @endforeach
 </ul>
