@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 
+Use App\User;
+
 class MicropostsController extends Controller
 {
     /**
@@ -19,10 +21,12 @@ class MicropostsController extends Controller
         if (\Auth::check()) {
             $user = \Auth::user();
             $microposts = $user->microposts()->orderBy('created_at', 'desc')->paginate(10);
+            $users = $user->followings()->paginate(10);
 
             $data = [
                 'user' => $user,
                 'microposts' => $microposts,
+                'users' => $users,
             ];
             $data += $this->counts($user);
             return view('users.show', $data);

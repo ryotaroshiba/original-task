@@ -54,7 +54,7 @@ class RegisterController extends Controller
         ]);
     }
 
-    /**
+    /**s
      * Create a new user instance after a valid registration.
      *
      * @param  array  $data
@@ -62,10 +62,12 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+      return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'point' => "0",
             'password' => bcrypt($data['password']),
         ]);
+      
     }
 }
